@@ -6,6 +6,6 @@ export class CursosService {
   constructor() { }
 
   getCursos(){
-    return ['Java','Ext JS', 'Angular'];
+    return ['Java','Ext JS', 'Angular','Spring'];
   }
 }
