@@ -25,6 +25,8 @@ export class DataBindingComponent implements OnInit {
 
   cursoAngular: boolean = true;
 
+  nome: string = 'Heitor Neto';
+
   getCurtirCurso(){
     return true;
   }
