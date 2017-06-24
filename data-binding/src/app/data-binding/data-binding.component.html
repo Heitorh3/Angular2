@@ -10,7 +10,44 @@
   <article>
     <h3>Property binding</h3>
     <img src="{{ urlImagen }}">
-    <img [src]="urlImagen">
-    <img bind-src="urlImagen">
+    <!--<img [src]="urlImagen">
+    <img bind-src="urlImagen"> -->
+  </article>
+
+  <article>
+    <h3>Class e Style Bind</h3>
+    <div>
+      Selecione uma classe
+      <select #classe (change) = "0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Danger</option>   
+      </select>
+    </div>
+
+    <br><br>
+
+    <div class="alert {{ classe.value }}" role="alert">
+      Texto é colorido cnforme o valor do combobox.
+    </div>
+
+    <div class="alert " role="alert"
+    [class.alert-success] = "classe.value == 'alert-success'">Sucesso</div>
+    
+    <div class="alert " role="alert"
+    [class.alert-info] = "classe.value == 'alert-info'">Info</div>
+
+    <div class="alert " role="alert"
+    [class.alert-warning] = "classe.value == 'alert-warning'">Warning</div>
+
+    <div class="alert " role="alert"
+    [class.alert-danger] = "classe.value == 'alert-danger'">Danger</div>
+
+    <div class="alert alert-danger" role="alert"
+    [style.display] = "classe.value == 'alert-danger' ? 'block' : 'none'">
+      Esse texto só aparece em caso de erro!
+    </div>
+
   </article>
 </section>
