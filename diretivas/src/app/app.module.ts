@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DiretivaNgifComponent } from './diretiva-ngif/diretiva-ngif.component';
+import { DiretivaNgSwitchCaseComponent } from './diretiva-ng-switch-case/diretiva-ng-switch-case.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DiretivaNgifComponent
+    DiretivaNgifComponent,
+    DiretivaNgSwitchCaseComponent
   ],
   imports: [
     BrowserModule
