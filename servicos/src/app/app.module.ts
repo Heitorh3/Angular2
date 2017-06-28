@@ -6,6 +6,7 @@ import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { CursosModule } from './cursos/cursos.module';
 import { CursosService } from './cursos/cursos.service';
 
+
 @NgModule({
   declarations: [
     AppComponent
