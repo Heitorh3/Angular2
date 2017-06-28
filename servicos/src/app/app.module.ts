@@ -1,24 +1,21 @@
-import { CursosService } from './cursos/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CursosComponent } from './cursos/cursos.component';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
-
+import { CursosModule } from './cursos/cursos.module';
+import { CursosService } from './cursos/cursos.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CursosComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    CriarCursoModule
+    CriarCursoModule,
+    CursosModule
   ],
-  providers: [
-    CursosService
-  ],
+  //providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

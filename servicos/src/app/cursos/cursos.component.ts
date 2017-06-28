@@ -21,4 +21,8 @@ export class CursosComponent implements OnInit {
     this.cursos = this._cursosService.getCursos();
   }
 
+  // onAddCurso(curso: string){
+  //   this._cursosService.addCurso(curso);
+  // }
+
 }
