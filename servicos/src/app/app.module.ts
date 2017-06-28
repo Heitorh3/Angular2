@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { CriarCursoModule } from './criar-curso/criar-curso.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { CursosComponent } from './cursos/cursos.component';
     CursosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CriarCursoModule
   ],
   providers: [
     CursosService
