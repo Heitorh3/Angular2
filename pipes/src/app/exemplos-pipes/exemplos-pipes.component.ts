@@ -24,6 +24,18 @@ export class ExemplosPipesComponent implements OnInit {
   ngOnInit() {
   }
 
+  obterCurso(){
+    
+    if(this.livros.length === 0 || this.filtro === undefined || this.filtro.trim() === ''){
+      return this.livros;
+    }
+
+    return this.livros.filter(
+        v => v.toLocaleLowerCase().includes(this.filtro.toLocaleLowerCase())
+    );
+
+  }
+
   addCurso(valor){
     this.livros.push(valor);
     console.log(this.livros);
