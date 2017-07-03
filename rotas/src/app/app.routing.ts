@@ -9,7 +9,7 @@ const APP_ROUTES: Routes = [
 
     {path: '', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'curso', component: CursosComponent},
+    {path: 'cursos', component: CursosComponent},
 
 ];
 
