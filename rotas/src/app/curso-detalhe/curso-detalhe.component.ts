@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-curso-detalhe',
@@ -9,13 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 export class CursoDetalheComponent implements OnInit {
 
   id: string;
+  inscricao: Subscription;
 
-  constructor(private _route: ActivatedRoute) {
-    console.log(this._route);
-    this.id = this._route.snapshot.params['id'];
+  constructor(private _route: ActivatedRoute) {    
+    //this.id = this._route.snapshot.params['id'];
    }
 
   ngOnInit() {
+    this.inscricao = this._route.params.subscribe(
+      (params: any) => {
+        this.id = params['id'];
+      }
+    );
+  }
+
+  ngOnDestroy(){
+    this.inscricao.unsubscribe();
   }
 
 }
