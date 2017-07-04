@@ -1,4 +1,3 @@
-import { AuthGuard } from './guards/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 //import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthService } from './login/auth.service';
+import { CursosGuard } from './guards/cursos.guard';
+import { AuthGuard } from './guards/auth.guard';
 //import { CursosModule } from './cursos/cursos.module';
 //import { AlunosModule } from './alunos/alunos.module';
 
@@ -35,7 +36,11 @@ import { AuthService } from './login/auth.service';
     AppRoutingModule
    // routing,
   ],
-  providers:[AuthService, AuthGuard],
+  providers:[
+    AuthService,
+    AuthGuard,
+    CursosGuard
+  ],
   //providers: [CursosService],
   bootstrap: [AppComponent]
 })
