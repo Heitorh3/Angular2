@@ -12,10 +12,10 @@ export class AppComponent {
   mostrarMenu: boolean = false;
 
   constructor(private _authService: AuthService){
-    
+
   }
 
-  ngOnIniti(){
+  ngOnInit(){
     this._authService.mostrarMenuEmitter.subscribe(
       mostrar => this.mostrarMenu = mostrar
     );
