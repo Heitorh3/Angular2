@@ -8,6 +8,10 @@
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot
     ): Observable<boolean> | Promise<boolean> | boolean {
+
+      console.log(route);
+      console.log(state);
+
       return true;
     }
   }
