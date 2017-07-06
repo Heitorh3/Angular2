@@ -25,11 +25,11 @@
       required email #email="ngModel">
 
     <div *ngIf="!email.valid && email.touched" class="alert alert-danger">
-        Email é obrigatório
+        Email inválido
       </div>
       <span *ngIf="!nome.valid && nome.touched" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
       <span id="email" class="sr-only">(error)</span>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!frm.valid">Submit</button>
 </form>
