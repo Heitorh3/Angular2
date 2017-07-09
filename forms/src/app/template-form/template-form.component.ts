@@ -25,7 +25,7 @@ export class TemplateFormComponent implements OnInit {
     return !campo.valid && campo.touched;
   }
 
-  aplicaCssError(campo){
+  aplicaCssErro(campo){
     return {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
