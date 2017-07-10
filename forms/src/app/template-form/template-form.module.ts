@@ -4,20 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { TemplateFormComponent } from './template-form.component';
-import { FormDebugComponent } from '../form-debug/form-debug.component';
-import { CampoControlErrorComponent } from './../campo-control-error/campo-control-error.component';
-
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule
   ],
   declarations: [
-    TemplateFormComponent,
-    FormDebugComponent,
-    CampoControlErrorComponent
+    TemplateFormComponent
   ]
 })
 export class TemplateFormModule { }
