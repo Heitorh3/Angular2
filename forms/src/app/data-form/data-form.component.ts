@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from "@angular/forms";
+import { Http } from "@angular/http";
 
 @Component({
   selector: 'app-data-form',
@@ -10,7 +11,9 @@ export class DataFormComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(
+    private _formBuilder: FormBuilder, 
+    private _http: Http) { }
 
   ngOnInit() {
 
@@ -24,6 +27,14 @@ export class DataFormComponent implements OnInit {
       nome: new FormControl('valor inicial'),
       email: new FormControl(null)
     });*/
+  }
+
+  onSubmit(){
+    console.log(this.formulario.value);
+
+     this._http.post('https://httpbin.org/post',JSON.stringify(this.formulario.value))
+              .map(resposta => resposta)
+              .subscribe(dados => console.log(dados));
   }
 
 }
