@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, FormBuilder, Validators } from "@angular/forms";
 import { Http } from "@angular/http";
 
+import { DropdownService } from './../shared/services/dropdown.service';
+import { EstadosBr } from './../shared/models/estados-br';
+
 @Component({
   selector: 'app-data-form',
   templateUrl: './data-form.component.html',
@@ -10,12 +13,20 @@ import { Http } from "@angular/http";
 export class DataFormComponent implements OnInit {
 
   formulario: FormGroup;
+  estados: EstadosBr[];
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _http: Http) { }
+    private _http: Http,
+    private _dropDownService: DropdownService) { }
 
   ngOnInit() {
+
+    this._dropDownService.getEstadosBr()
+                         .subscribe(dados => {
+                           this.estados = dados;
+                           console.log(dados);
+                        });
 
     this.formulario = this._formBuilder.group({
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
@@ -99,7 +110,7 @@ export class DataFormComponent implements OnInit {
 
   //Verifica se campo cep possui valor informado.
   if (cep != "") {
-    
+
     //Expressão regular para validar o CEP.
     var validacep = /^[0-9]{8}$/;
 
@@ -131,13 +142,13 @@ populaDadosForm(dados){
     this.resetaDadosForm();
     alert("CEP não encontrado.");
   }
-      
+
 }
 
 resetaDadosForm(){
   this.formulario.patchValue({
     endereco: {
-      rua:null,        
+      rua:null,
       complemento: null,
       bairro: null,
       cidade: null,

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { CampoControlErrorComponent } from './campo-control-error/campo-control-error.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
-
+import { DropdownService } from './services/dropdown.service';
 
 @NgModule({
   imports: [
@@ -25,6 +25,7 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
     ReactiveFormsModule,
     FormDebugComponent,
     CampoControlErrorComponent
-  ]
+  ],
+  providers:[DropdownService]
 })
 export class SharedModule { }
