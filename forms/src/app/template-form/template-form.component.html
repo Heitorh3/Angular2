@@ -74,8 +74,7 @@
   </div>
 
   <div class="form-group">
-  <div class="col-md-5"
-    [ngClass]="aplicaCssErro(bairro)">
+  <div class="col-md-5" [ngClass]="aplicaCssErro(bairro)">
     <label for="bairro" class="control-label">Bairro</label>
     <input type="text" class="form-control" id="bairro" name="bairro" ngModel required #bairro="ngModel">
 
@@ -102,6 +101,7 @@
   </div>
   </div>
 </div>
+
   <button type="submit" class="btn btn-primary" [disabled]="!frm.valid">Submit</button>
 
   <app-form-debug [form]="frm"></app-form-debug>
