@@ -1,12 +1,10 @@
-import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
 import { SharedModule } from './../shared/shared.module';
 import { DataFormComponent } from './data-form.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
-    SharedModule,
-    HttpModule
+    SharedModule
   ],
   declarations: [
     DataFormComponent

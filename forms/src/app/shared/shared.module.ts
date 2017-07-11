@@ -1,6 +1,7 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from "@angular/forms";
 
 import { CampoControlErrorComponent } from './campo-control-error/campo-control-error.component';
 import { FormDebugComponent } from './form-debug/form-debug.component';
@@ -9,6 +10,8 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
 @NgModule({
   imports: [
     CommonModule,
+    HttpModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   declarations: [
@@ -16,6 +19,10 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
     CampoControlErrorComponent
   ],
   exports: [
+    CommonModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     FormDebugComponent,
     CampoControlErrorComponent
   ]
